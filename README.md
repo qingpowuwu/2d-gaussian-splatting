@@ -55,9 +55,17 @@ conda activate surfel_splatting
 ```
 ## Training
 To train a scene, simply use
+
 ```bash
 python train.py -s <path to COLMAP or NeRF Synthetic dataset>
 ```
+
+Ex:
+
+```bash
+python train.py -s /home/qingpo.wuwu1/gaussian-splatting/data/tand_dp/tandt/train --port 1311 --data_device cuda:0 --eval # Train with train/test 
+```
+
 Commandline arguments for regularizations
 ```bash
 --lambda_normal  # hyperparameter for normal consistency
