@@ -88,6 +88,30 @@ Commandline arguments you should adjust accordingly for meshing for bounded TSDF
 --depth_trunc # depth truncation
 ```
 If these arguments are not specified, the script will automatically estimate them using the camera information.
+
+```bash
+# 只想要获得 video
+python render.py -s /home/qingpo.wuwu1/Project_2_3dGS_Cars/datasets/1_Cars/tand_dp/tandt/truck -m /home/qingpo.wuwu1/Project_2_3dGS_Cars/1_Ours/2d-gaussian-splatting/output/a279e2b4-2 --skip_test --skip_train --render_path
+```
+<video width="640" height="360" controls>
+
+<source src="https://github.com/user-attachments/assets/a43352b7-bc1d-494c-9e85-34e636585ab9" type="video/mp4">
+
+Your browser does not support the video tag.
+
+</video>
+
+https://github.com/user-attachments/assets/a43352b7-bc1d-494c-9e85-34e636585ab9
+https://github.com/user-attachments/assets/2c15eb10-6120-460d-a4ed-e65a255e527a
+
+```bash
+# 想要获得 images，video，mesh(i.e, fuse.ply, fuse_post.ply)
+python render.py -s /home/qingpo.wuwu1/Project_2_3dGS_Cars/datasets/1_Cars/tand_dp/tandt/truck -m /home/qingpo.wuwu1/Project_2_3dGS_Cars/1_Ours/2d-gaussian-splatting/output/a279e2b4-2 --mesh_res 1024 --render_path
+```
+
+<img width="1791" alt="截屏2024-09-16 23 38 48" src="https://github.com/user-attachments/assets/ab4ef430-7b31-4482-b28f-4d1bb66f900c">
+
+
 ### Unbounded Mesh Extraction
 To export a mesh with an arbitrary size, we devised an unbounded TSDF fusion with space contraction and adaptive truncation.
 ```bash
